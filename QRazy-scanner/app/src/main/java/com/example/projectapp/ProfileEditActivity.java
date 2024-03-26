@@ -101,7 +101,10 @@ public class ProfileEditActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference attendeeRef = db.collection("attendees").document(attendee.getAttendeeId());
 
-        attendeeRef.set(attendee)
+
+        attendeeRef.set(attendee);
+        attendeeRef.set(attendee) 
+
                 .addOnSuccessListener(aVoid -> Log.d("ProfileEditActivity", "DocumentSnapshot successfully updated!"))
                 .addOnFailureListener(e -> Log.w("ProfileEditActivity", "Error updating document", e));
     }
